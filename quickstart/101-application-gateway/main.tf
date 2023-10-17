@@ -138,8 +138,10 @@ resource "azurerm_windows_virtual_machine" "vm" {
   os_disk {
     caching              = "ReadWrite"
     storage_account_type = "Standard_LRS"
+    encryption_settings {
+      enabled = true
+    }
   }
-
 
   source_image_reference {
     publisher = "MicrosoftWindowsServer"
