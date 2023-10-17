@@ -14,23 +14,30 @@ resource "random_string" "container_name" {
   special = false
 }
 
-resource "azurerm_container_group" "container" {
-  name                = "${var.container_group_name_prefix}-${random_string.container_name.result}"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
-  ip_address_type     = "Public"
+resource "azurerm_container_group" "example" {
+  name                = "example-container-group"
+  location            = azurerm_resource_group.example.location
+  resource_group_name = azurerm_resource_group.example.name
   os_type             = "Linux"
-  restart_policy      = var.restart_policy
 
+  ip_address_type = "public"
+  
   container {
-    name   = "${var.container_name_prefix}-${random_string.container_name.result}"
-    image  = var.image
-    cpu    = var.cpu_cores
-    memory = var.memory_in_gb
-
+    name   = "example-container"
+    image  = "nginx"
+    cpu    = "0.5"
+    memory = "1.5"
     ports {
-      port     = var.port
+      port     = 80
       protocol = "TCP"
     }
+  }
+
+  tags = {
+    environment = "Production"
+  }
+
+  network_profile {
+    network_plugin = "azure"
   }
 }
