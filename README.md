@@ -1,24 +1,9 @@
-# Contributing
-This project welcomes contributions and suggestions.
-
-## Modules
-Module summary
-[Module contribution guide](./module/CONTRIBUTE.md)
-
-## Providers
-Provider summary
-[Provider contribution guide](./provider/CONTRIBUTE.md)
-
-# Contributing
-
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.microsoft.com.
-
-When you submit a pull request, a CLA-bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+L'infrastructure que nous avons déployé en West Europe est composé de :
+- Une machine virtuelle (i.lizati) a été déployée.
+- Une clé SSH distante appelé sshkeyremote a été ajoutée pour gérer à distance la vm.
+- Un disque nommé "myOsDisk" qui est lié à la vm.
+- Une interface réseau "myNIC" associé à la vm.
+- Un compte de stockage a été configuré pour stocker les données liées à l'infrastructure.
+- Un réseau virtuel appelé "myVnet" a été créé pour connecter et isoler les ressources.
+- Une adresse IP publique myPublicIP (20.8.126.198) a été allouée à la machine virtuelle.
+- Un groupe de sécurité réseau "myNetworkSecurityGroup" a été configuré pour contrôler les règles de sécurité du réseau. 
